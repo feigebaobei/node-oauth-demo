@@ -1,4 +1,4 @@
-A very simple demo of OAuth 2.0 using Node.js，to add GitHub login to your app and access GitHub API.
+<!-- A very simple demo of OAuth 2.0 using Node.js，to add GitHub login to your app and access GitHub API.
 
 ![](https://www.wangbase.com/blogimg/asset/201904/bg2019042103.jpg)
 
@@ -46,3 +46,25 @@ $ node index.js
 
 Visit http://localhost:8080 in your browser, and click the link to login GitHub.
 
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 这个项目中别的代码与 服务端sdk 无关-->
+
+在终端进入`项目根目录/lib`.执行`node testTokenSDKServer.js`。
+
+tokenSDKServer.js     // 使用nodo.js语言写的服务端sdk
+testTokenSDKServer.js // 测试tokenSDKServer.js的文件
