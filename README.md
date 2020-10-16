@@ -53,12 +53,28 @@ const tokenSDKServer = require('./tokenSDKServer')
 ```
 
 ### 资源导入
+
 链信服务端SDK采用预分配应用系统DID的方式，即以资源文件的形式一次性将DID所依赖的资源导入到应用系统，
-资源文件名为didserver.properties，
-文件内容包括：DID值、私钥密文、公钥、DID相关的电话号码、链信身份DID的服务节点地址。
+资源文件名为`a0f49a0b95a5201b690bf0b79eb715dad9ae7815efe9800998ecf8427e8d74.ttm`。
+文件内容包括：
+- 内容编码txt文本
+- 内容正文
+  - nickname:did:encodebased64_SM4(json数组，密钥)
+  - 密钥
+    - 身份密码
+    - 导出或备份时生产的备份验证码
+- nickname：did的昵称，用于显示和提示及校验
+- did：去掉前缀的did字串
+- json数组
+  - name：实名
+  - phone：可收验证码确权的手机号
+  - pdid：关联的父did，可通过父did确权
+  - node：服务器接入点域名
+  - prikey：私钥
+    - encode_based64_SM4(私钥，文件名did+nickname)
+  - 这个加密是为了保证文件完整性没有被破坏，与导出时一致：文件名和昵称
 
 *注意：文件保存在系统运行的当前目录下。*
-
 
 ### api（暂定）
 
